@@ -1,0 +1,43 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero-links {
+    position: absolute;
+    top: 45px;
+    right: 55px;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.hero-links a {
+    color: #222;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 8px 4px;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-links a:hover {
+    color: #666;
+    transform: translateY(-2px);
+}
