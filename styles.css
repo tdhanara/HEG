@@ -1,43 +1,78 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
+/* ---------- HERO ---------- */
 
 .hero {
     position: relative;
     width: 100%;
+    min-height: 70vh;
+
+    background-image: url("images/Horizon_sunset.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
 }
 
-.hero img {
-    display: block;
-    width: 100%;
+/* ---------- LOGO ---------- */
+
+.hero > img {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+
+    width: clamp(150px, 20vw, 300px);
     height: auto;
 }
 
+/* ---------- NAVIGATION ---------- */
+
 .hero-links {
     position: absolute;
-    top: 45px;
-    right: 55px;
-    z-index: 10;
+    top: 5%;
+    right: 20%;
 
     display: flex;
-    align-items: center;
-    gap: 38px;
+    gap: clamp(12px, 2.5vw, 35px);
 }
 
 .hero-links a {
-    color: #222;
+    color: white;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    padding: 8px 4px;
 
-    transition: color 0.2s ease, transform 0.2s ease;
+    font-size: clamp(14px, 1.6vw, 22px);
+    font-weight: bold;
+
+    white-space: nowrap;
 }
 
-.hero-links a:hover {
-    color: #666;
-    transform: translateY(-2px);
+/* ---------- PHONE ---------- */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 70vh;
+        background-position: center center;
+    }
+
+    .hero > img {
+        top: 5%;
+        left: 5%;
+        width: 45vw;
+        max-width: 220px;
+    }
+
+    .hero-links {
+        top: 18%;
+        left: 5%;
+        right: 5%;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 12px 20px;
+    }
+
+    .hero-links a {
+        font-size: 16px;
+    }
 }
