@@ -3,13 +3,11 @@
 .hero {
     position: relative;
     width: 100%;
-    min-height: 70vh;
-
+    min-height: 90vh;
     background-image: url("images/Horizon_sunset.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-
     overflow: hidden;
 }
 
@@ -18,9 +16,8 @@
 .hero > img {
     position: absolute;
     top: 4%;
-    left: 4%;
-
-    width: clamp(150px, 20vw, 300px);
+    left: 2%;
+    width: clamp(150px, 30vw, 300px);
     height: auto;
 }
 
@@ -30,9 +27,28 @@
     position: absolute;
     top: 5%;
     right: 20%;
-
     display: flex;
     gap: clamp(12px, 2.5vw, 35px);
+}
+
+.hero-loc {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    display: flex;
+    gap: 8px;
+}
+.hero-loc .separator {
+    margin: 0;
+    color: gold;
+    font-size: 12px;
+}
+.hero-loc a {
+    color: gold;
+    text-decoration: none;
+    font-size: clamp(10px, 1.0vw, 16px);
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .hero-links a {
@@ -41,8 +57,75 @@
 
     font-size: clamp(14px, 1.6vw, 22px);
     font-weight: bold;
-
     white-space: nowrap;
+}
+
+.hero-content {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    color: white;
+    font-size: clamp(40px, 6vw, 90px);
+    font-weight: 300;
+    line-height: 1.05;
+    text-align: left;
+}
+.hero-content1 {
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    color: white;
+    font-size: clamp(5px, 3vw, 20px);
+    font-weight: 500;
+    line-height: 1.05;
+    text-align: left;
+}
+/* =====================================================
+   HERO BUTTONS
+   ===================================================== */
+
+.hero-buttons {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+.hero-buttons a {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+/* Main button */
+.primary-button {
+    background: white;
+    color: #162f45;
+}
+.primary-button:hover {
+    background: #e8e8e8;
+    transform: translateY(-2px);
+}
+/* Secondary button */
+.secondary-button {
+    color: white;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.12);
+}
+.secondary-button:hover {
+    background: white;
+    color: #162f45;
+    transform: translateY(-2px);
 }
 
 /* ---------- PHONE ---------- */
@@ -65,10 +148,8 @@
         top: 18%;
         left: 5%;
         right: 5%;
-
         justify-content: center;
         flex-wrap: wrap;
-
         gap: 12px 20px;
     }
 
