@@ -1,7 +1,7 @@
 /* Shared return link for interior pages. */
 .home-link {
     position: fixed;
-    top: 20px;
+    top: 25px;
     left: 20px;
     z-index: 20;
     padding: 10px 14px;
@@ -324,7 +324,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #456b9e;
+    color: orange;
+   // color: #456b9e;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.58em;
@@ -338,6 +339,7 @@
 }
 
 .leadership-intro {
+    color: orange;
     padding: clamp(62px, 7vw, 96px) 0 21px;
 }
 
@@ -353,7 +355,7 @@
 
 .leadership-intro h1 {
     margin: 0;
-    color: #264a7d;
+    color: #d6ad57;
     font-family: Didot, "Bodoni 72", Georgia, serif;
     font-size: clamp(48px, 4.05vw, 64px);
     font-weight: 600;
