@@ -1,3 +1,26 @@
+/* Shared return link for interior pages. */
+.home-link {
+    position: fixed;
+    top: 25px;
+    left: 20px;
+    z-index: 20;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background: #162f45;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:focus-visible {
+    background: #fff;
+    color: #162f45;
+}
+
 /* ---------- HERO ---------- */
 .hero {
     position: relative;
@@ -166,7 +189,7 @@
     margin: clamp(48px, 8vw, 120px) auto 0;
     padding-bottom: clamp(48px, 8vw, 120px);
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: clamp(16px, 2vw, 32px);
     align-items: stretch;
 }
@@ -174,20 +197,24 @@
 .hero-video {
     display: block;
     width: 100%;
-    height: 100%;
-    aspect-ratio: 16 / 9;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     background: #162f45;
 }
 
 .image-grid {
-    min-height: 0;
+    display: grid;
+    grid-column: span 3;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 32px);
 }
 
 .image-grid img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
@@ -196,7 +223,10 @@
 @media (max-width: 600px) {
 
     .hero {
-        min-height: 70vh;
+        /* Use fixed, generous vertical landmarks on phones.  Percentage-based
+           offsets made the headline, description and buttons collide when the
+           viewport was short or the heading wrapped to extra lines. */
+        min-height: 720px;
         background-position: center center;
     }
 
@@ -208,7 +238,7 @@
     }
 
     .hero-links {
-        top: 18%;
+        top: 130px;
         left: 5%;
         right: 5%;
         justify-content: center;
@@ -218,6 +248,45 @@
 
     .hero-links a {
         font-size: 16px;
+    }
+
+    .hero-loc {
+        top: 205px;
+        left: 5%;
+    }
+
+    .hero-loc a {
+        font-size: 14px;
+    }
+
+    .hero-content {
+        top: 255px;
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        font-size: 34px;
+        line-height: 1.08;
+    }
+
+    .hero-content1 {
+        top: 410px;
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .hero-buttons {
+        top: 510px;
+        left: 5%;
+        right: 5%;
+        gap: 12px;
+    }
+
+    .hero-buttons a {
+        padding: 13px 18px;
+        font-size: 14px;
     }
 
     .about-text {
@@ -231,6 +300,11 @@
     }
 
     .media {
+        grid-template-columns: 1fr;
+    }
+
+    .image-grid {
+        grid-column: auto;
         grid-template-columns: 1fr;
     }
 
@@ -259,7 +333,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #456b9e;
+    color: orange;
+   // color: #456b9e;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.58em;
@@ -273,6 +348,7 @@
 }
 
 .leadership-intro {
+    color: orange;
     padding: clamp(62px, 7vw, 96px) 0 21px;
 }
 
@@ -288,7 +364,7 @@
 
 .leadership-intro h1 {
     margin: 0;
-    color: #264a7d;
+    color: #d6ad57;
     font-family: Didot, "Bodoni 72", Georgia, serif;
     font-size: clamp(48px, 4.05vw, 64px);
     font-weight: 600;
@@ -418,7 +494,6 @@
     grid-template-columns: minmax(0, 2fr) minmax(280px, 0.84fr);
     align-items: start;
     margin-top: clamp(36px, 4vw, 64px);
-    border: 1px solid #c9cfce;
 }
 
 .strategy-intro h1,
@@ -434,7 +509,6 @@
     font-size: clamp(48px, 5.35vw, 82px);
     line-height: 0.98;
     padding: clamp(40px, 5vw, 72px) clamp(24px, 4vw, 64px);
-    border-right: 1px solid #c9cfce;
 }
 
 .strategy-intro > p {
@@ -449,8 +523,6 @@
 .strategy-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    border: 1px solid #c9cfce;
-    border-top: 0;
 }
 
 .strategy-card {
@@ -460,15 +532,12 @@
     padding: 46px 32px 47px;
 }
 
-.strategy-card + .strategy-card {
-    border-left: 1px solid #c9cfce;
-}
-
 .strategy-card-content {
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: flex-end;
+    transform: translateY(-30px);
 }
 
 .strategy-card h2 {
@@ -478,6 +547,7 @@
 
 .strategy-card p {
     max-width: 290px;
+    min-height: 4.95em;
     margin: 26px 0 0;
     color: #506570;
     font-size: 17px;
@@ -505,14 +575,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .strategy-card:nth-child(3) {
-        border-left: 0;
-        border-top: 1px solid #c9cfce;
-    }
-
-    .strategy-card:nth-child(4) {
-        border-top: 1px solid #c9cfce;
-    }
 }
 
 @media (max-width: 600px) {
@@ -525,14 +587,6 @@
         grid-template-columns: 1fr;
     }
 
-    .strategy-intro > p {
-        border-top: 1px solid #c9cfce;
-    }
-
-    .strategy-intro h1 {
-        border-right: 0;
-    }
-
     .strategy-grid {
         grid-template-columns: 1fr;
     }
@@ -542,9 +596,4 @@
         padding: 32px 20px;
     }
 
-    .strategy-card + .strategy-card,
-    .strategy-card:nth-child(3) {
-        border-top: 1px solid #c9cfce;
-        border-left: 0;
-    }
 }
