@@ -196,7 +196,10 @@
 @media (max-width: 600px) {
 
     .hero {
-        min-height: 70vh;
+        /* Use fixed, generous vertical landmarks on phones.  Percentage-based
+           offsets made the headline, description and buttons collide when the
+           viewport was short or the heading wrapped to extra lines. */
+        min-height: 720px;
         background-position: center center;
     }
 
@@ -208,7 +211,7 @@
     }
 
     .hero-links {
-        top: 18%;
+        top: 130px;
         left: 5%;
         right: 5%;
         justify-content: center;
@@ -218,6 +221,45 @@
 
     .hero-links a {
         font-size: 16px;
+    }
+
+    .hero-loc {
+        top: 205px;
+        left: 5%;
+    }
+
+    .hero-loc a {
+        font-size: 14px;
+    }
+
+    .hero-content {
+        top: 255px;
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        font-size: 34px;
+        line-height: 1.08;
+    }
+
+    .hero-content1 {
+        top: 410px;
+        left: 5%;
+        right: 5%;
+        max-width: none;
+        font-size: 15px;
+        line-height: 1.35;
+    }
+
+    .hero-buttons {
+        top: 510px;
+        left: 5%;
+        right: 5%;
+        gap: 12px;
+    }
+
+    .hero-buttons a {
+        padding: 13px 18px;
+        font-size: 14px;
     }
 
     .about-text {
